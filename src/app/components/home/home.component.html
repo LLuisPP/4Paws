@@ -1,0 +1,27 @@
+<div class="container justify-content-center">
+  <div class="container">
+    <button class="menu-button" (click)="toggleSidebar()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </button>
+    <app-sidebar [isSidebarOpen]="isSidebarOpen" (isSidebarOpenChange)="isSidebarOpen = $event"></app-sidebar>
+  </div>
+</div>
+
+
+<div class="container text-center">
+  <h2>Establecimientos Destacados</h2>
+  <div class="row justify-content-center">
+    <div class="col-md-4" *ngFor="let establishment of featuredEstablishments">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ establishment.name }}</h5>
+          <p class="card-text">{{ establishment.description }}</p>
+          <!-- Puedes agregar más detalles o enlaces aquí -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
