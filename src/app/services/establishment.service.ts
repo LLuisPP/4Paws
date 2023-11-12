@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
-import { Establishment } from '../models/establishment.model'; // Importa la interfaz de datos
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class EstablishmentService {
-  // Simula datos de establecimientos destacados
-  private establishments: Establishment[] = [
-    { id: 1, name: 'Establecimiento 1', description: 'Descripción del establecimiento 1' },
-    { id: 2, name: 'Establecimiento 2', description: 'Descripción del establecimiento 2' },
-    // Agrega más establecimientos destacados aquí
-  ];
+  constructor(private firestore: AngularFirestore) {}
 
-  getFeaturedEstablishments(): Establishment[] {
-    return this.establishments;
+  // Método para obtener los establecimientos destacados
+
+  getEstablishments(): Observable<any[]> {
+    return this.firestore.collection('establishments').valueChanges();
   }
+
 }

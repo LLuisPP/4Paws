@@ -5,7 +5,20 @@
       <div class="bar"></div>
       <div class="bar"></div>
     </button>
-    <app-sidebar [isSidebarOpen]="isSidebarOpen" (isSidebarOpenChange)="isSidebarOpen = $event"></app-sidebar>
+  </div>
+</div>
+
+<!-- Mensaje de éxito -->
+<div *ngIf="profileUpdated && user && user.displayName">
+  <div class="alert alert-success" role="alert">
+    Perfil actualizado correctamente.
+  </div>
+</div>
+
+<!-- Mensaje de error -->
+<div *ngIf="profileUpdated && user && !user.displayName">
+  <div class="alert alert-danger" role="alert">
+    Error al actualizar el perfil.
   </div>
 </div>
 
@@ -17,25 +30,15 @@
           <h2 class="text-center">Mi Perfil 🐾</h2>
         </div>
         <div class="card-body">
-          <form (ngSubmit)="updateUserProfile()" #profileForm="ngForm">
+          <form (ngSubmit)="updateProfile()" #profileForm="ngForm">
             <div class="mb-3">
               <label for="name" class="form-label">Nombre:</label>
               <input
                 type="text"
                 class="form-control"
                 id="name"
-                [(ngModel)]="user.displayName"
+                [(ngModel)]="updatedName"
                 name="displayName"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Correo Electrónico:</label>
-              <input
-                type="email"
-                class="form-control"
-                id="email"
-                [(ngModel)]="user.email"
-                name="email"
               />
             </div>
             <div class="mb-3">
@@ -44,7 +47,7 @@
                 type="text"
                 class="form-control"
                 id="address"
-                [(ngModel)]="user.address"
+                [(ngModel)]="updatedAddress"
                 name="address"
               />
             </div>
@@ -54,7 +57,7 @@
                 type="text"
                 class="form-control"
                 id="telephone"
-                [(ngModel)]="user.telephone"
+                [(ngModel)]="updatedTelephone"
                 name="telephone"
               />
             </div>
@@ -65,3 +68,5 @@
     </div>
   </div>
 </div>
+
+<app-sidebar [isSidebarOpen]="isSidebarOpen" (isSidebarOpenChange)="isSidebarOpen = $event"></app-sidebar>

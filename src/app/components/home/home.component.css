@@ -44,3 +44,22 @@ i {
 .menu-button.open .bar:nth-child(3) {
   transform: translateY(-6px) rotate(-45deg);
 }
+
+.logoHome {
+  text-align: center; /* Centra horizontalmente */
+}
+
+.logoHome img {
+  width: 200px; /* Establece el ancho deseado para el logo */
+  height: auto; /* Mantiene la proporción de aspecto */
+}
+
+.cardName{
+  font-weight: bold;
+}
+
+
+.cardAdress{
+  font-weight: bold;
+}
+

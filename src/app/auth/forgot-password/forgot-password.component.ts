@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { Route } from '@angular/router';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-forgot-password',
@@ -12,7 +13,10 @@ export class ForgotPasswordComponent {
   isSidebarOpen = false;
   email: string = '';
 
-  constructor(private afAuth: AngularFireAuth) {}
+  constructor(
+    private afAuth: AngularFireAuth,
+    private router: Router
+    ) {}
 
   onSubmit() {
     // Enviamos un correo de restablecimiento de contraseña
@@ -20,6 +24,7 @@ export class ForgotPasswordComponent {
       .then(() => {
         // Éxito: muestra un mensaje al usuario
         console.log('Se ha enviado un correo de restablecimiento de contraseña.');
+        this.router.navigate(['/login']);
       })
       .catch((error) => {
         // Error: maneja el error y muestra un mensaje al usuario

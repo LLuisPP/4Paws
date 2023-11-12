@@ -10,6 +10,7 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import { AuthGuard } from './auth/shared/auth.guard';
 import { MapComponent } from './components/map/map.component';
 
+
 const routes: Routes = [
   { path: '', component: WelcomeComponent },
   { path: 'home', component: HomeComponent},
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'user-profile', component: UserProfileComponent, canActivate: [AuthGuard] },
-  { path: 'map', component: MapComponent},
+  { path: 'map', component: MapComponent },
+
 ];
 
 @NgModule({

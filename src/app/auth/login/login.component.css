@@ -1,9 +1,9 @@
 a {
   display: flex;
+  justify-content: center;
   align-items: center;
-  color: #333;
+  color: rgba(223, 162, 38);
   text-decoration: none;
-  margin: 10px;
 }
 
 i {

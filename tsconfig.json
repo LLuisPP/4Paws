@@ -1,7 +1,8 @@
-/* To learn more about this file see: https://angular.io/config/tsconfig. */
+
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "skipLibCheck": true,
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
@@ -22,15 +23,12 @@
     "lib": [
       "ES2022",
       "dom"
-    ],
-    "allowSyntheticDefaultImports": true,
-    "noImplicitAny": false,
+    ]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
-    "strictTemplates": true,
-    "strictNullChecks": false
+    "strictTemplates": true
   }
 }

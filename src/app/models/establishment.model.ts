@@ -1,10 +1,11 @@
 // src/app/models/establishment.model.ts
 export interface Establishment {
-  id: number;
-  name: string;
-  img?: string;
+  adress?: string;
   description: string;
+  img?: string;
+  lat: number;
+  long: number;
+  name: string;
   telephone?: number;
-  address?: string;
   // Otros campos relevantes
 }
